@@ -10,7 +10,7 @@ Adds support for posting Image tokens to a web site. Example use is for storing 
 
 # URL receiver
 You need to create a page on the otherside that can recive a Form POST. Image will be stored with the ID "image". 
-Here you can find a simple example: https://github.com/ludvigaldrin/com.svipler.athom.imageposter/blob/master/sendImage.php 
+Here you can find a simple example: https://github.com/ludvigaldrin/com.svipler.athom.imageposter/blob/master/example/sendImage.php 
 Upload it to your server and create a folder named images. Then point it out from the Flow e.g. http://yoururl.com/sendImage.php
 There is some simple logging done.
 
