@@ -1,0 +1,41 @@
+{
+  "id": "com.svipler.athom.imageposter",
+  "version": "1.0.0",
+  "compatibility": ">=1.5.0",
+  "sdk": 2,
+  "name": {
+    "en": "Image Poster"
+  },
+  "description": {
+    "en": "Hejsan Adds support for posting Image tokens to a web site. Example use is for storing camera images on a server."
+  },
+  "category": [
+    "video"
+  ],
+  "permissions": [],
+  "images": {
+    "large": "/assets/images/large.png",
+    "small": "/assets/images/small.png"
+  },
+  "author": {
+    "name": "Ludvig Aldrin",
+    "email": "ludvig.aldrin@gmail.com"
+  },
+  "flow": {
+    "actions": [
+      {
+        "id": "sendimage",
+        "title": {
+          "en": "Send a image"
+        },
+        "droptoken": "image",
+        "args": [
+          {
+            "name": "URL",
+            "type": "text"
+          }
+        ]
+      }
+    ]
+  }
+}
