@@ -1,13 +1,13 @@
 {
   "id": "com.svipler.athom.imageposter",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "compatibility": ">=1.5.0",
   "sdk": 2,
   "name": {
     "en": "Image Poster"
   },
   "description": {
-    "en": "Hejsan Adds support for posting Image tokens to a web site. Example use is for storing camera images on a server."
+    "en": "Adds support for posting/uploading Images/Pictures via Image tokens to a web site."
   },
   "category": [
     "video"
