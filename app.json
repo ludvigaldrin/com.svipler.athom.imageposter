@@ -1,17 +1,24 @@
 {
   "id": "com.svipler.athom.imageposter",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "compatibility": ">=1.5.0",
   "sdk": 2,
   "name": {
     "en": "Image Poster"
   },
   "description": {
-    "en": "Adds support for posting/uploading Images/Pictures via Image tokens to a web site."
+    "en": "Upload Image Token's to your website"
   },
   "category": [
     "video"
   ],
+  "bugs": {
+    "url": "https://bitbucket.org/athom/com.athom.myapp/issues"
+  },
+  "homeyCommunityTopicId": 32904,
+  "source": "https://github.com/ludvigaldrin/com.svipler.athom.imageposter",
+  "homepage": "https://github.com/ludvigaldrin/com.svipler.athom.imageposter",
+  "support": "https://community.athom.com/t/app-image-poster/32904",
   "permissions": [],
   "images": {
     "large": "/assets/images/large.png",
