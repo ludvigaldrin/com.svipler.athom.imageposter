@@ -1,8 +1,8 @@
 {
   "id": "com.svipler.athom.imageposter",
-  "version": "1.0.4",
-  "compatibility": ">=1.5.0",
-  "sdk": 2,
+  "version": "2.0.0",
+  "compatibility": ">=5.0.0",
+  "sdk": 3,
   "name": {
     "en": "Image Poster"
   },
@@ -35,7 +35,9 @@
         "title": {
           "en": "Send a image"
         },
-        "droptoken": "image",
+        "titleFormatted": {
+          "en": "Send a image to [[URL]]"
+        },
         "args": [
           {
             "name": "URL",

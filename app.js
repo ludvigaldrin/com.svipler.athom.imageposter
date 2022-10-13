@@ -12,18 +12,18 @@ const CONTENT_TYPES = {
 };
 
 class ImagePoster extends Homey.App {
-  onInit() {
+  async onInit() {
     this.log("Image Poster is running...");
 
     this.initializeActions();
   }
 
   async initializeActions() {
-    let sendImage = new Homey.FlowCardAction("sendimage");
+    let sendImage = this.homey.FlowCardAction("sendimage");
     sendImage.register().registerRunListener(async (args, state) => {
       console.log("[SEND IMAGE] " + JSON.stringify(args));
 
-      let image = args.droptoken;
+      let image = "image";
       let URL = args.URL;
 
       const form = new FormData();
@@ -62,8 +62,8 @@ class ImagePoster extends Homey.App {
         console.log("Response:", await response.text());
         return false;
       } else {
-		console.log("Response:", await response.text()); 
-	  }
+        console.log("Response:", await response.text());
+      }
 
       //const body = await response.json();
       return response.ok;
