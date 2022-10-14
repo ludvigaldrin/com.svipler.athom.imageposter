@@ -15,6 +15,7 @@
   "bugs": {
     "url": "https://community.athom.com/t/app-image-poster/32904"
   },
+  "brandColor": "#F47A67",
   "homeyCommunityTopicId": 32904,
   "source": "https://github.com/ludvigaldrin/com.svipler.athom.imageposter",
   "homepage": "https://github.com/ludvigaldrin/com.svipler.athom.imageposter",
@@ -36,8 +37,11 @@
           "en": "Send a image"
         },
         "titleFormatted": {
-          "en": "Send a image to [[URL]]"
+          "en": "Send [[droptoken]] to [[URL]]"
         },
+        "droptoken": [
+          "image"
+        ],
         "args": [
           {
             "name": "URL",

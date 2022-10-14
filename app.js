@@ -2,7 +2,7 @@
 
 const Homey = require("homey");
 const { PassThrough } = require("stream");
-const fetch = require("node-fetch");
+const axios = require('axios')
 const FormData = require("form-data");
 
 const CONTENT_TYPES = {
@@ -19,12 +19,12 @@ class ImagePoster extends Homey.App {
   }
 
   async initializeActions() {
-    let sendImage = this.homey.FlowCardAction("sendimage");
-    sendImage.register().registerRunListener(async (args, state) => {
+    const sendImageCard = this.homey.flow.getActionCard("sendimage");
+    sendImageCard.registerRunListener(async (args, state) => {
       console.log("[SEND IMAGE] " + JSON.stringify(args));
 
-      let image = "image";
-      let URL = args.URL;
+      const image = args.droptoken;
+      const URL = args.URL;
 
       const form = new FormData();
       if (image.getStream) {
@@ -51,22 +51,22 @@ class ImagePoster extends Homey.App {
           });
         }
       }
-
-      const response = await fetch(URL, {
+      console.log("Send stream to: ", URL)
+      const response = await axios({
+        url: URL,
         method: "POST",
-        body: form.pipe(new PassThrough()),
+        data: form.pipe(new PassThrough()),
         headers: form.getHeaders(),
       });
 
-      if (!response.ok) {
-        console.log("Response:", await response.text());
+
+      if (response.statusText !== "OK") {
+        console.log("Response NOT OK:", response.data());
         return false;
       } else {
-        console.log("Response:", await response.text());
+        console.log("Response:", response.data());
+        return true;
       }
-
-      //const body = await response.json();
-      return response.ok;
     });
   }
 }
