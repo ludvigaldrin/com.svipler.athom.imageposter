@@ -51,21 +51,27 @@ class ImagePoster extends Homey.App {
           });
         }
       }
-      console.log("Send stream to: ", URL)
-      const response = await axios({
-        url: URL,
-        method: "POST",
-        data: form.pipe(new PassThrough()),
-        headers: form.getHeaders(),
-      });
+      try {
+        console.log("Send stream to: ", URL)
+        const response = await axios({
+          url: URL,
+          method: "POST",
+          data: form.pipe(new PassThrough()),
+          headers: form.getHeaders(),
+        });
 
+        console.log("Send done: ", response);
 
-      if (response.statusText !== "OK") {
-        console.log("Response NOT OK:", response.data());
+        if (response.statusText !== "OK") {
+          console.log("Response NOT OK:", response.statusText);
+          return false;
+        } else {
+          console.log("Response:", response.data);
+          return true;
+        }
+      } catch (err){
+        console.log("Error:", err)
         return false;
-      } else {
-        console.log("Response:", response.data());
-        return true;
       }
     });
   }
