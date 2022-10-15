@@ -1,0 +1,5 @@
+{
+  "2.0.0": {
+    "en": "Upgraded for SDK 3 and new Homey Pro. Changed to Axios for Post requests."
+  }
+}
